@@ -1,6 +1,7 @@
 //this program calculates the average and number of above average values
-//of inputted data.
+//of inputed data.
 import java.util.Scanner;
+import java.util.Arrays;
 public class LiamOReillyWeatherAnalysisV2 {
     public static void main (String []args) {
         //ask for user input
@@ -16,6 +17,7 @@ public class LiamOReillyWeatherAnalysisV2 {
         double avg = calcAVG(totalTemp, days);
         //print the results
         printAVG(avg, aboveAVG, days, array);
+        hottestAndColdest(array, days);
     }
 
     public static int askDays() {
@@ -47,5 +49,24 @@ public class LiamOReillyWeatherAnalysisV2 {
             }
         }
         System.out.println(aboveAVG + " days were above average.");
+    }
+    public static void hottestAndColdest(int[] array, int days) {
+        System.out.println("Temperatures: " + Arrays.toString(array));
+    		/*int max = Integer.MIN_VALUE;
+    		int min = Integer.MAX_VALUE;
+    		int secondMax = 0;
+    		int secondMin = 0;
+    			for(int i = 0; i < days; i++) {
+    				if(array[i]>max) {
+    					max = array [i];
+    				}
+    				if(array[i]<min) {
+    					min = array [i];
+    				}
+    			}*/
+        Arrays.sort(array);
+
+        System.out.println("Two coldest days: " + array[0] + ", " + array[1]);
+        System.out.println("Two hottest days: " + array[array.length-1] + ", " + array[array.length-2]);
     }
 }

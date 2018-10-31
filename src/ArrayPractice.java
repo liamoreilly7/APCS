@@ -2,14 +2,23 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class ArrayPractice {
     public static void main(String []args){
-        randomArray();
+        int[] array = {27,15,15,11,27};
+        mode(array);
     }
-    public static void randomArray(){
-        int numbers = (int)((Math.random() * 10)+1);
-        int [] array = new int[numbers];
-        for(int i = 0; i<numbers; i++){
-            array [i] = (int) ((Math.random() * 10)+1);
-        }
-        System.out.println(Arrays.toString(array));
+    public static int mode(int[] array){
+       int[]tally = new int[101];
+       for(int i = 0; i <array.length; i++){
+           tally[array[i]]++;
+       }
+       //System.out.print(Arrays.toString(tally));
+       int max = 0;
+       for(int i = 0; i<100; i++){
+           if(tally[i]>=max){
+               max = i;
+           }
+
+       }
+       System.out.println(max);
+    return max;
     }
 }
