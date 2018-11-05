@@ -1,9 +1,17 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class LiamOReillySum {
     public static final int CONSTANT = 25;
-    public static void main(String[] args){
-        Scanner file = new Scanner(newFile("sum.txt"));
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner file = new Scanner(new File("G:\\My Drive\\APCS\\src\\sum.txt"));
 
-        int[][] array = new int[CONSTANT][];
+        while (file.hasNextLine()){
+            Scanner line = new Scanner(file.nextLine());
+            int[]array = new int[25];
+
+        }
+
     }
+
 }
